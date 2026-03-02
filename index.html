@@ -14,34 +14,20 @@
             font-family: sans-serif;
         }
 
-        metabase-dashboard {
+        iframe {
             width: 100%;
             height: 100vh;
             display: block;
             border: none;
         }
     </style>
-    <!-- Load the Metabase embedding script -->
-    <script defer src="https://agile-sea.metabaseapp.com/app/embed.js"></script>
-    <script>
-        function defineMetabaseConfig(config) {
-            window.metabaseConfig = config;
-        }
-    </script>
-    <script>
-        defineMetabaseConfig({
-            "isGuest": true,
-            "instanceUrl": "https://agile-sea.metabaseapp.com"
-        });
-    </script>
 </head>
 
 <body>
-    <!-- The Metabase custom element. Notice we have with-downloads="false" -->
-    <metabase-dashboard
-        token="eyJhbGciOiJIUzI1NiJ9.eyJyZXNvdXJjZSI6eyJkYXNoYm9hcmQiOjE3OX0sInBhcmFtcyI6e30sImlhdCI6MTc3MjQzMTg4MCwiZXhwIjoxNzcyNDMyNDgwLCJfZW1iZWRkaW5nX3BhcmFtcyI6eyJkYXRlIjoiZGlzYWJsZWQifX0.PYvLCdGtqhKpYyeDxl9WAlQoYcBcPI0M8a78Xqu1NHg"
-        with-title="true" with-downloads="false">
-    </metabase-dashboard>
+    <iframe
+        src="https://agile-sea.metabaseapp.com/embed/dashboard/eyJhbGciOiJIUzI1NiJ9.eyJyZXNvdXJjZSI6eyJkYXNoYm9hcmQiOjE3OX0sInBhcmFtcyI6e30sImlhdCI6MTc3MjQzMTg4MCwiZXhwIjoxNzcyNDMyNDgwLCJfZW1iZWRkaW5nX3BhcmFtcyI6eyJkYXRlIjoiZGlzYWJsZWQifX0.PYvLCdGtqhKpYyeDxl9WAlQoYcBcPI0M8a78Xqu1NHg#bordered=false&titled=true&hide_download_button=true"
+        allowtransparency="true">
+    </iframe>
 </body>
 
 </html>
