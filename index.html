@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Metabase Dashboard</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe { width: 100%; height: 100%; border: none; }
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #f4f6f8;
+            font-family: sans-serif;
+        }
+
+        metabase-dashboard {
+            width: 100%;
+            height: 100vh;
+            display: block;
+            border: none;
+        }
     </style>
+    <!-- Load the Metabase embedding script -->
+    <script defer src="https://agile-sea.metabaseapp.com/app/embed.js"></script>
+    <script>
+        function defineMetabaseConfig(config) {
+            window.metabaseConfig = config;
+        }
+    </script>
+    <script>
+        defineMetabaseConfig({
+            "isGuest": true,
+            "instanceUrl": "https://agile-sea.metabaseapp.com"
+        });
+    </script>
 </head>
+
 <body>
-    <iframe 
-        src="https://agile-sea.metabaseapp.com/public/dashboard/b4a8abef-891e-42f8-a347-7a4aec40c1c6?downloads=false&date=day&tab=180-mainpage" 
-        allowtransparency="true">
-    </iframe>
+    <!-- The Metabase custom element. Notice we have with-downloads="false" -->
+    <metabase-dashboard
+        token="eyJhbGciOiJIUzI1NiJ9.eyJyZXNvdXJjZSI6eyJkYXNoYm9hcmQiOjE3OX0sInBhcmFtcyI6e30sImlhdCI6MTc3MjQzMTg4MCwiZXhwIjoxNzcyNDMyNDgwLCJfZW1iZWRkaW5nX3BhcmFtcyI6eyJkYXRlIjoiZGlzYWJsZWQifX0.PYvLCdGtqhKpYyeDxl9WAlQoYcBcPI0M8a78Xqu1NHg"
+        with-title="true" with-downloads="false">
+    </metabase-dashboard>
 </body>
+
 </html>
